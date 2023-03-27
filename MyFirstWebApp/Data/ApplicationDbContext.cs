@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MyFirstWebApp.Models;
 
 namespace MyFirstWebApp.Data
 {
@@ -9,5 +10,6 @@ namespace MyFirstWebApp.Data
             : base(options)
         {
         }
+        public DbSet<MyFirstWebApp.Models.Student> Student { get; set; }
     }
 }

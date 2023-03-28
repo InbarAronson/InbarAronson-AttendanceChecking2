@@ -23,9 +23,9 @@ namespace MyFirstWebApp.Pages.Students
 
         public async Task OnGetAsync()
         {
-            if (_context.Student != null)
+            if (_context.Students != null)
             {
-                Student = await _context.Student.ToListAsync();
+                Student = await _context.Students.ToListAsync();
             }
         }
     }

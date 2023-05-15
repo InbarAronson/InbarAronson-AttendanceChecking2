@@ -23,7 +23,7 @@ namespace MyFirstWebApp.Pages
 
         public RedirectToPageResult OnPost()
         {
-            
+
             var RFID = Request.Form["RFID"];
             var CurrentTime = DateTime.Now;
 
@@ -32,8 +32,8 @@ namespace MyFirstWebApp.Pages
             //was just scanned in?"
 
             //var DatabaseQuery = "SELECT StudentID FROM RFID WHERE RFID=" + RFID;
+
             var QueryResponse = _context.RFIDCard
-                .Include(s => s.StudentID)
                 .Where(m => m.RFID == RFID)
                 .FirstOrDefault();
             if (QueryResponse != null)
@@ -63,7 +63,7 @@ namespace MyFirstWebApp.Pages
 
 
 
-            
+
 
         }
     }

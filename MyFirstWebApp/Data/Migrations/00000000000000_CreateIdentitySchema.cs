@@ -152,7 +152,7 @@ namespace MyFirstWebApp.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-            
+            /*
             migrationBuilder.CreateTable(
                    name: "RFID",
                     columns: table => new
@@ -160,13 +160,16 @@ namespace MyFirstWebApp.Data.Migrations
                         StudentId = table.Column<string>(nullable: false),
                         RFID = table.Column<string>(maxLength: 12, nullable: true),
 
-                    });
-
+                    },
+                constraints: table =>
+                {
+                    table.PrimaryKey("RFID", x => new { x.RFID });
+                });
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
                 column: "RoleId");
-
+            */
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
                 table: "AspNetRoles",

@@ -152,6 +152,15 @@ namespace MyFirstWebApp.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+            
+            migrationBuilder.CreateTable(
+                   name: "RFID",
+                    columns: table => new
+                    {
+                        StudentId = table.Column<string>(nullable: false),
+                        RFID = table.Column<string>(maxLength: 12, nullable: true),
+
+                    });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

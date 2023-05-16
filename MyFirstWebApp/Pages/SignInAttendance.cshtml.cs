@@ -31,10 +31,12 @@ namespace MyFirstWebApp.Pages
             //querying (asking) the database "which student ID has this RFID that
             //was just scanned in?"
 
-            //var DatabaseQuery = "SELECT StudentID FROM RFID WHERE RFID=" + RFID;
+            var DatabaseQuery = "SELECT StudentID FROM RFID WHERE RFID=" + RFID;
+
+            int RFIDInt = Convert.ToInt32(RFID);
 
             var QueryResponse = _context.RFIDCard
-                .Where(m => m.RFID == RFID)
+                .Where (x => x.RFID == RFIDInt)
                 .FirstOrDefault();
             if (QueryResponse != null)
             {

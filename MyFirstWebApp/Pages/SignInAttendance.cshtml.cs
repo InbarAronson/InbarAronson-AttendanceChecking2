@@ -17,8 +17,18 @@ namespace MyFirstWebApp.Pages
         {
             _context = context;
         }
-        public void OnGet()
+
+        public IList<Attendance> Attendance { get; set; } = default!;
+
+        public async Task OnGetAsync()
         {
+            if (_context.Attendance != null)
+            {
+                Attendance = await _context.Attendance
+                    .Include(s => s.Student)
+                    .AsNoTracking()
+                    .ToListAsync();
+            }
         }
 
         public RedirectToPageResult OnPost()

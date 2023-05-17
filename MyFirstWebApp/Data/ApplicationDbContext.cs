@@ -22,6 +22,7 @@ namespace MyFirstWebApp.Data
             modelBuilder.Entity<Enrollment>().ToTable("Enrollment");
             modelBuilder.Entity<Student>().ToTable("Student");
             modelBuilder.Entity<RFIDCard>().ToTable("RFID");
+            modelBuilder.Entity<Attendance>().ToTable("Attendance");
             base.OnModelCreating(modelBuilder);
         }
 

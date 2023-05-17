@@ -12,6 +12,37 @@
 
 <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Attendance[0].StudentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Attendance[0].StudentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Attendance[0].AttDateTime)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Attendance) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AttDateTime)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
 
 <script language="Javascript">
     function showTime() {
@@ -47,9 +78,9 @@
 
 
             <style>
-    body {
+    /*body {
         background: black;
-    }
+    }*/
 
     .clock {
         position: absolute;
